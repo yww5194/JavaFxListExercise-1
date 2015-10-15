@@ -71,7 +71,7 @@ public class FXMLDocumentController implements Initializable {
 
     // Add each person to the list
     for (Person p : people) {
-      lvPeople.getItems().add(p.getFirstName() + " " + p.getLastName());
+      lvPeople.getItems().add(p.getId() + ", " +p.getFirstName() + " " + p.getLastName());
     }
   }
 
@@ -85,6 +85,7 @@ public class FXMLDocumentController implements Initializable {
     PersonJpaController jpaPerson = new PersonJpaController(emf);
 
     try {
+      int id = Integer.parseInt(idStr);
       jpaPerson.create(newPerson);
     } catch (Exception ex) {
       Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
@@ -97,7 +98,13 @@ public class FXMLDocumentController implements Initializable {
     private void handleBtnDeletePersonClicked(MouseEvent event) {
                 
 String selectedText = lvPeople.getSelectionModel().getSelectedItem();
+String id Str = selectedText.split(", ")[0];
 System.out.println("Delete " + selectedText);
+
+
+System.out.println();
+
+
 
         
     }
