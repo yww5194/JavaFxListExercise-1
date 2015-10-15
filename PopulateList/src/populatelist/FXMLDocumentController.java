@@ -40,6 +40,8 @@ public class FXMLDocumentController implements Initializable {
   private TextField tfLastName;
   @FXML
   private Button btnAddPerson;
+    @FXML
+    private Button btnDelete;
 
   @FXML
   private void handleButtonAction(ActionEvent event) {
@@ -90,5 +92,9 @@ public class FXMLDocumentController implements Initializable {
 
     SyncPeopleListView();
   }
+
+    @FXML
+    private void handleBtnDeletePersonClicked(MouseEvent event) {
+    }
 
 }
